@@ -1,0 +1,73 @@
+{
+    "imageActionName": "uploadimage",
+    "imageFieldName": "upfile",
+    "imageMaxSize": 2048000,
+    "imageAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"], 
+    "imageCompressBorder": 1600,
+    "imageInsertAlign": "none", 
+    "imageUrlPrefix": "", 
+    "imagePathFormat": "./static/upload/image/", 
+                                
+    "scrawlActionName": "uploadscrawl",
+    "scrawlFieldName": "upfile",
+    "scrawlPathFormat": "./static/upload/image/",
+    "scrawlMaxSize": 2048000, 
+    "scrawlUrlPrefix": "", 
+    "scrawlInsertAlign": "none",
+
+    
+    "snapscreenActionName": "uploadimage",
+    "snapscreenPathFormat": "./static/upload/image/",
+    "snapscreenUrlPrefix": "",
+    "snapscreenInsertAlign": "none",
+
+    "catcherLocalDomain": ["127.0.0.1", "localhost", "img.baidu.com"],
+    "catcherActionName": "catchimage",
+    "catcherFieldName": "source", 
+    "catcherPathFormat": "./static/upload/image/",
+    "catcherUrlPrefix": "",
+    "catcherMaxSize": 2048000,
+    "catcherAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
+
+    "videoActionName": "uploadvideo",
+    "videoFieldName": "upfile",
+    "videoPathFormat": "./static/upload/video/",
+    "videoUrlPrefix": "",
+    "videoMaxSize": 102400000,
+    "videoAllowFiles": [
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid"],
+
+    "fileActionName": "uploadfile",
+    "fileFieldName": "upfile",
+    "filePathFormat": "./static/upload/file/",
+    "fileUrlPrefix": "",
+    "fileMaxSize": 51200000,
+    "fileAllowFiles": [
+        ".png", ".jpg", ".jpeg", ".gif", ".bmp",
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid",
+        ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
+        ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml"
+    ],
+
+    "imageManagerActionName": "listimage",
+    "imageManagerListPath": "./static/upload/image/",
+    "imageManagerListSize": 20, 
+    "imageManagerUrlPrefix": "",
+    "imageManagerInsertAlign": "none",
+    "imageManagerAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
+
+    "fileManagerActionName": "listfile",
+    "fileManagerListPath": "./static/upload/file/",
+    "fileManagerUrlPrefix": "",
+    "fileManagerListSize": 20,
+    "fileManagerAllowFiles": [
+        ".png", ".jpg", ".jpeg", ".gif", ".bmp",
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid",
+        ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
+        ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml"
+    ]
+
+}
