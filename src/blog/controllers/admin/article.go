@@ -4,6 +4,7 @@ import (
 	"blog/models"
 	"blog/services"
 	"github.com/astaxie/beego"
+	"strconv"
 	"time"
 )
 
@@ -23,6 +24,7 @@ func (a *ArticleController) checkLogin() int32 {
 }
 
 func (this *ArticleController) Get() {
+	this.Data["opt"] = "save"
 	this.TplNames = "admin/article.tpl"
 }
 
@@ -32,18 +34,8 @@ func (this *ArticleController) Save() {
 		this.TplNames = "admin/alogin.tpl"
 		return
 	}
-	st, _ := this.GetInt("status")
-	category, _ := this.GetInt("category")
-	at := &models.Article{
-		Title:       this.GetString("rtitle"),
-		Tags:        this.GetString("tags"),
-		Url:         this.GetString("url"),
-		Category:    int32(category),
-		Status:      int32(st),
-		Content:     this.GetString("content"),
-		Create_time: time.Now(),
-		UserId:      uid,
-	}
+	at := megreForm(this)
+	at.UserId = uid
 
 	var msg string = at.Check()
 	if msg != "" {
@@ -56,8 +48,45 @@ func (this *ArticleController) Save() {
 		return
 	}
 
-	this.Ctx.WriteString("0")
+	this.Ctx.WriteString("SUCCESS")
 	return
+}
+
+func megreForm(this *ArticleController) *models.Article {
+	st, _ := this.GetInt("status")
+	category, _ := this.GetInt("category")
+	at := &models.Article{
+		Title:       this.GetString("rtitle"),
+		Tags:        this.GetString("tags"),
+		Url:         this.GetString("url"),
+		Category:    int32(category),
+		Status:      int32(st),
+		Content:     this.GetString("content"),
+		Create_time: time.Now(),
+	}
+	return at
+}
+
+func (a *ArticleController) ToEdit() {
+	id := a.Ctx.Input.Param(":id")
+	at := services.GetArticleById(id)
+	a.Data["opt"] = "edit/" + id
+	a.Data["a"] = at
+	a.TplNames = "admin/article.tpl"
+}
+
+func (a *ArticleController) Edit() {
+	uid := a.checkLogin()
+	if uid == 0 {
+		a.TplNames = "admin/alogin.tpl"
+		return
+	}
+	aid, _ := strconv.Atoi(a.Ctx.Input.Param(":id"))
+	at := megreForm(a)
+	at.UserId = uid
+	at.Id = int32(aid)
+	services.UpdateArticle(at)
+	a.Ctx.WriteString("Success.")
 }
 
 func (this *ArticleController) List() {

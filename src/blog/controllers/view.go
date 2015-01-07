@@ -12,7 +12,7 @@ type ViewController struct {
 func (v *ViewController) Index() {
 	as := services.ListArticle()
 	v.Data["as"] = as
-	v.TplNames = "blog.tpl"
+	v.TplNames = "index.html"
 }
 
 func (v *ViewController) View() {
@@ -22,6 +22,14 @@ func (v *ViewController) View() {
 	} else {
 		a := services.GetArticle(url)
 		v.Data["a"] = a
-		v.TplNames = "article_view.tpl"
+		v.TplNames = "post.html"
 	}
+}
+
+func (v *ViewController) Contact() {
+	v.TplNames = "contact.html"
+}
+
+func (v *ViewController) About() {
+	v.TplNames = "about.html"
 }

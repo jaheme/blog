@@ -9,6 +9,8 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.ViewController{}, "get:Index")
+	beego.Router("/contact.html", &controllers.ViewController{}, "get:Contact")
+	beego.Router("/about.html", &controllers.ViewController{}, "get:About")
 	beego.Router("/view/:url", &controllers.ViewController{}, "get:View")
 	beego.Router("/reg", &controllers.RegController{}, "get:Get")
 	beego.Router("/reg", &controllers.RegController{}, "post:Post")
@@ -25,6 +27,8 @@ func init() {
 	beego.Router("/admin/user/opt", &admin.UserController{}, "get:Operation")
 	beego.Router("/admin/article/new", &admin.ArticleController{}, "get:Get")
 	beego.Router("/admin/article/save", &admin.ArticleController{}, "post:Save")
+	beego.Router("/admin/article/toedit/:id", &admin.ArticleController{}, "get:ToEdit")
+	beego.Router("/admin/article/edit/:id", &admin.ArticleController{}, "post:Edit")
 	beego.Router("/admin/article/list", &admin.ArticleController{}, "get:List")
 	beego.Router("/admin/article/opt", &admin.ArticleController{}, "get:Operation")
 }

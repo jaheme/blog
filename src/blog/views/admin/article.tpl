@@ -17,29 +17,27 @@
 
 <body>
     <div class="div_from_aoto">
-        <FORM action="/admin/article/save" method="POST">
+        <FORM action="/admin/article/{{.opt}}" method="POST">
             <DIV class="control-group">
                 <label class="laber_from"> 标 题 </label>
                 <DIV  class="controls" >
-                    <INPUT class="input_from" id="rtitle" name="rtitle"  type=text placeholder=" 请输入">
+                    <INPUT class="input_from" name="rtitle"  value="{{.a.Title}}" type="text" placeholder=" 请输入">
                     <P class=help-block></P>
                 </DIV>
             </DIV>
             <DIV class="control-group">
                 <LABEL class="laber_from">URL名</LABEL>
                 <DIV class="controls" >
-                    <INPUT class="input_from" id="url"  name="url" type=text placeholder=" 请输入">
+                    <INPUT class="input_from" value="{{.a.Url}}" name="url" type=text placeholder=" 请输入">
                     <P class=help-block></P></DIV>
             </DIV>
             <DIV class="control-group">
                 <LABEL class="laber_from" > 标 签 </LABEL>
-                <DIV  class="controls" ><INPUT class="input_from" name="tags" type=text placeholder=" 请输入"><P class=help-block></P></DIV>
+                <DIV  class="controls" ><INPUT class="input_from" value="{{.a.Tags}}" name="tags" type=text placeholder=" 请输入"><P class=help-block></P></DIV>
             </DIV>
             <DIV class="control-group">
                     <!-- 加载编辑器的容器 -->
-                    <script id="container" name="content" type="text/plain">
-                        
-                    </script>
+                    <textarea id="container" name="content">{{.a.Content}}</textarea>
                     <!-- 实例化编辑器 -->
                     <script type="text/javascript">
                         var ue = UE.getEditor('container', {
@@ -84,7 +82,7 @@
                 </DIV> </LABEL>
                 <DIV class="controls">            
                         <select id="category" name="category" class="input_select">
-                            <option value="0">原创</option>
+                            <option value="0" selected="true">原创</option>
                             <option value="1">转载</option>
                         </select>            
                         <select id="status" name="status" class="input_select" style="margin-left:30px">

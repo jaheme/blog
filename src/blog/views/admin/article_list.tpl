@@ -19,7 +19,7 @@
         </thead>
         {{range $key, $val := .as}}
         <tr>
-            <td><a href="/view/{{$val.Url}}">{{$val.Title}}</a></td> 
+            <td><a href="/admin/article/toedit/{{$val.Id}}">{{$val.Title}}</a></td> 
             <td>{{$val.Url}}</td>
             <td>{{$val.Tags}}</td>
             <td>{{ if eq $val.Category 0}} 原创 {{else}} 转载 {{end}}</td>
