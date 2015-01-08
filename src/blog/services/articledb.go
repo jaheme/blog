@@ -6,6 +6,10 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
+const (
+	PAGE_SIZE int = 10
+)
+
 func SaveArticle(a *models.Article) error {
 	sql := "INSERT INTO article SET title=?, user_id=?, tags=?, url=?, category=?,status=?,create_time=?"
 	db := orm.NewOrm()
@@ -101,6 +105,20 @@ func GetArticleById(id string) (article models.Article) {
 	sql := "select a.*, at.content from article a, article_text at where a.id=at.article_id and a.id=?"
 	db := orm.NewOrm()
 	err := db.Raw(sql, id).QueryRow(&article)
+	if nil != err {
+		beego.Error(err)
+	}
+	return
+}
+
+// for index.
+func GetArticles(page int) (as []models.Article) {
+	start := page * PAGE_SIZE
+	sql := "select a.title, a.url, a.create_time, a.category, left(at.content,800) content" +
+		" from article a, article_text at" +
+		" where a.id=at.article_id order by id desc limit ?, ?"
+	db := orm.NewOrm()
+	_, err := db.Raw(sql, start, PAGE_SIZE).QueryRows(&as)
 	if nil != err {
 		beego.Error(err)
 	}

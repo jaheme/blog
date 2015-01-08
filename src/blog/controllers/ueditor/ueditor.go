@@ -59,7 +59,7 @@ func uploadImage(this *UeditorController) {
 			out["state"] = err.Error()
 			beego.Error("MkdirAll-", err.Error())
 		} else {
-			filename := fmt.Sprintf("%s/%d%s", savepath, time.Now().UnixNano(), ext)
+			filename := fmt.Sprintf("%s%d%s", savepath, time.Now().UnixNano(), ext)
 			if err := this.SaveToFile("upfile", filename); err != nil {
 				out["state"] = err.Error()
 				beego.Error("SaveToFile-", err.Error())

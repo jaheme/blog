@@ -10,7 +10,7 @@ type ViewController struct {
 }
 
 func (v *ViewController) Index() {
-	as := services.ListArticle()
+	as := services.GetArticles(0)
 	v.Data["as"] = as
 	v.TplNames = "index.html"
 }

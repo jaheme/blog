@@ -1,3 +1,4 @@
+CREATE DATABASE IF NOT EXISTS blog DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int AUTO_INCREMENT NOT NULL,
@@ -29,7 +30,8 @@ CREATE TABLE IF NOT EXISTS `article` (
 
 CREATE TABLE IF NOT EXISTS `article_text` (
   `article_id` int(10) NOT NULL,
-  `content` text NOT NULL
+  `content` text NOT NULL,
+  PRIMARY KEY (`article_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `article_commend` (
@@ -40,3 +42,6 @@ CREATE TABLE IF NOT EXISTS `article_commend` (
   `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO user SET uname='jaheme', rname='', uemail='yinghelai@gmail.com', passw='jaheme', create_time=now(), login_time=now(), is_admin=1;
+

@@ -343,6 +343,9 @@
 
         //webAppKey 百度应用的APIkey，每个站长必须首先去百度官网注册一个key后方能正常使用app功能，注册介绍，http://app.baidu.com/static/cms/getapikey.html
         //, webAppKey: ""
+	,highlightJsUrl:URL + "third-party/SyntaxHighlighter/shCore.js"
+	,highlightCssUrl:URL + "third-party/SyntaxHighlighter/shCoreDefault.css"
+
     };
 
     function getUEBasePath(docUrl, confUrl) {
