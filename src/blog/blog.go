@@ -18,7 +18,7 @@ func main() {
 
 func init_orm() {
 	orm.RegisterDriver("mysql", orm.DR_MySQL)
-	orm.Debug = true
+	// orm.Debug = true
 	orm.RegisterDataBase("default", "mysql", beego.AppConfig.String("dataSource"), 10, 20)
 	// orm.RegisterModel(new(models.RenderKey))
 	// orm.RegisterModel(new(models.Rendering))

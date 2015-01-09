@@ -7,6 +7,11 @@
 
     <link rel="stylesheet" href="/static/css/admin/admin.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/static/css/admin/bootstrap.min.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="/static/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/static/ueditor/ueditor.all.min.js"></script>
 </head>
 
 <body>
@@ -88,9 +93,4 @@
         </FORM>
     </div>
 </body>
-    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
-    <!-- 配置文件 -->
-    <script type="text/javascript" src="/static/ueditor/ueditor.config.js"></script>
-    <!-- 编辑器源码文件 -->
-    <script type="text/javascript" src="/static/ueditor/ueditor.all.js"></script>
 </html>
