@@ -4,8 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台模板</title>
 
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-
 <link rel="stylesheet" href="/static/css/admin/admin.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="/static/css/admin/bootstrap.min.css" type="text/css" media="screen" />
 

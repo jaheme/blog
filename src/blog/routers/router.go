@@ -19,6 +19,8 @@ func init() {
 	beego.Router("/ueditor/ctrl", &ueditor.UeditorController{}, "get:Get")
 	beego.Router("/ueditor/ctrl", &ueditor.UeditorController{}, "post:Post")
 
+	beego.Router("/msg/add", &admin.MessageController{}, "post:AddMsg")
+	beego.Router("/msg/list", &admin.MessageController{}, "get:ListMsg")
 	beego.Router("/admin", &admin.AdminController{}, "get:Get")
 	beego.Router("/admin", &admin.AdminController{}, "post:ALogin")
 	beego.Router("/admin/user/add", &admin.UserController{}, "get:Get")

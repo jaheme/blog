@@ -5,10 +5,9 @@
     <title>user list manager</title>
 
     <link rel="stylesheet" href="/static/css/admin/bootstrap.min.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/static/css/admin/admin.css" type="text/css" media="screen" /></head>
+    <link rel="stylesheet" href="/static/css/admin/admin.css" type="text/css" media="screen" />
 
-    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
-
+</head>
 <body> 
     <table class="table table-hover">
         <thead>     

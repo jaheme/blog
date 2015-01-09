@@ -63,6 +63,16 @@
                     </li>
                 </ul>
             </li> <!-- end menu item -->
+            <li class="childUlLi">
+                <a href="role.html" target="menuFrame"> <i class="glyph-icon icon-reorder"></i>留言</a>
+                <ul>
+                    <li>
+                        <a href="/msg/list" target="menuFrame">
+                            <i class="glyph-icon icon-chevron-right"></i>留言
+                        </a>
+                    </li>
+                </ul>
+            </li> <!-- end message item -->
         </ul>
     </div>
     <!--菜单-->

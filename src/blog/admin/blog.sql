@@ -45,3 +45,12 @@ CREATE TABLE IF NOT EXISTS `article_commend` (
 
 INSERT INTO user SET uname='jaheme', rname='', uemail='yinghelai@gmail.com', passw='jaheme', create_time=now(), login_time=now(), is_admin=1;
 
+CREATE TABLE IF NOT EXISTS `message` (
+  `id` int AUTO_INCREMENT NOT NULL,
+  `uname` varchar(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `phone` varchar(32) DEFAULT '',
+  `message` varchar(512) DEFAULT '',
+  `create_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

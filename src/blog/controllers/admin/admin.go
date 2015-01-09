@@ -97,3 +97,30 @@ func (u *UserController) Operation() {
 		u.List()
 	}
 }
+
+////////////// message ///////////////
+type MessageController struct {
+	beego.Controller
+}
+
+func (m *MessageController) AddMsg() {
+	uname := m.GetString("name")
+	email := m.GetString("email")
+	phone := m.GetString("phone")
+	msg := m.GetString("message")
+	if msg == "" {
+		return
+	}
+	err := services.AddMsg(uname, email, phone, msg)
+	if err != nil {
+		m.Ctx.WriteString("Sorry, Some Error Happen. You Can Contact With yinghelai@gmail.com")
+	}
+	m.Ctx.WriteString("Success.")
+}
+
+func (m *MessageController) ListMsg() {
+	ms := services.ListMsg()
+	m.Data["ms"] = ms
+	m.TplNames = "admin/message.tpl"
+
+}
