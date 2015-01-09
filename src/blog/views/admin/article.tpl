@@ -59,6 +59,7 @@
                                 'backcolor', 
                                 'insertorderedlist', 
                                 'insertunorderedlist', 
+                                'link', 'unlink',
                                 'insertcode', //代码语言
                                 'simpleupload',
                                 'insertimage', 

@@ -12,7 +12,16 @@ type ViewController struct {
 func (v *ViewController) Index() {
 	as := services.GetArticles(0)
 	v.Data["as"] = as
-	v.TplNames = "index.html"
+	setTpl(v, "index.html")
+}
+
+func setTpl(v *ViewController, tplName string) {
+	v.Layout = tplName
+	v.TplNames = tplName
+	v.LayoutSections = make(map[string]string)
+	v.LayoutSections["Header"] = "header.html"
+	v.LayoutSections["Navigation"] = "navigation.html"
+	v.LayoutSections["Footer"] = "footer.html"
 }
 
 func (v *ViewController) View() {
@@ -22,14 +31,14 @@ func (v *ViewController) View() {
 	} else {
 		a := services.GetArticle(url)
 		v.Data["a"] = a
-		v.TplNames = "post.html"
+		setTpl(v, "post.html")
 	}
 }
 
 func (v *ViewController) Contact() {
-	v.TplNames = "contact.html"
+	setTpl(v, "contact.html")
 }
 
 func (v *ViewController) About() {
-	v.TplNames = "about.html"
+	setTpl(v, "about.html")
 }
